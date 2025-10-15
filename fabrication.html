@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Fabrication &amp; Misc Tools | Gear Head Proving Grounds</title>
+<meta name="description" content="Injector sizing, airflow estimation, and other shop tools"/>
+<meta name="robots" content="index,follow"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Gear Head Proving Grounds",
+  "url": "https://example.com",
+  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
+  "publisher": {"@type":"Organization","name":"Gear Head Proving Grounds"}
+}
+</script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="header">
+  <img src="logo.png" alt="Gear Head Proving Grounds logo"/>
+  <div>
+    <div class="site-title">Gear Head Proving Grounds</div>
+    <div style="font-size:12px;color:#666">Tools & calculators for builders, tuners & enthusiasts</div>
+  </div>
+  <nav class="nav">
+    <div class="dropdown"><a href="index.html">Home</a></div>
+    <div class="dropdown"><a href="#">Calculators ▾</a>
+      <div class="dropdown-content">
+        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="tire-wheel.html">Tire & Wheel</a></div>
+        <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="fabrication.html">Fabrication & Misc</a></div>
+      </div>
+    </div>
+    <div class="dropdown"><a href="#top">Top</a></div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="card"><h1>Fabrication & Misc Tools</h1><p class="small-muted">Injector sizing, airflow estimation, and welding material helpers.</p></div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Injector Size Estimator</h2>
+      <form class="calc" data-id="injector_size" onsubmit="return false;">
+        <label>Target wheel HP</label><input name="hp" placeholder="e.g. 400">
+        <label>Number of cylinders</label><input name="cyl" placeholder="e.g. 8">
+        <label>BSFC (lb/hp-hr)</label><input name="bsfc" placeholder="e.g. 0.55">
+        <label>Duty cycle (%)</label><input name="duty" placeholder="e.g. 80">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Estimate</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Airflow (CFM) Estimator</h2>
+      <form class="calc" data-id="airflow_cfm" onsubmit="return false;">
+        <label>Horsepower</label><input name="hp" placeholder="e.g. 400">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Estimate</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
+<script src="script.js"></script>
+</body>
+</html>

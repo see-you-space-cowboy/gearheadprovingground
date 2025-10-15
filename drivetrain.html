@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Drivetrain Calculators | Gear Head Proving Grounds</title>
+<meta name="description" content="RPM from speed and gear ratio calculators"/>
+<meta name="robots" content="index,follow"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Gear Head Proving Grounds",
+  "url": "https://example.com",
+  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
+  "publisher": {"@type":"Organization","name":"Gear Head Proving Grounds"}
+}
+</script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="header">
+  <img src="logo.png" alt="Gear Head Proving Grounds logo"/>
+  <div>
+    <div class="site-title">Gear Head Proving Grounds</div>
+    <div style="font-size:12px;color:#666">Tools & calculators for builders, tuners & enthusiasts</div>
+  </div>
+  <nav class="nav">
+    <div class="dropdown"><a href="index.html">Home</a></div>
+    <div class="dropdown"><a href="#">Calculators ▾</a>
+      <div class="dropdown-content">
+        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="tire-wheel.html">Tire & Wheel</a></div>
+        <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="fabrication.html">Fabrication & Misc</a></div>
+      </div>
+    </div>
+    <div class="dropdown"><a href="#top">Top</a></div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="card"><h1>Drivetrain & Vehicle Dynamics</h1><p class="small-muted">Gear ratios, RPM from speed, and driveshaft calculators.</p></div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>RPM from Vehicle Speed</h2>
+      <form class="calc" data-id="rpm_from_speed" onsubmit="return false;">
+        <label>Speed (mph)</label><input name="speed" placeholder="e.g. 60">
+        <label>Gear ratio</label><input name="gear" placeholder="e.g. 3.00">
+        <label>Final drive</label><input name="final" placeholder="e.g. 3.73">
+        <label>Tire diameter (in)</label><input name="tire" placeholder="e.g. 26">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute RPM</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
+<script src="script.js"></script>
+</body>
+</html>

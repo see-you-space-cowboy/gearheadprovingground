@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Fuel &amp; Performance Calculators | Gear Head Proving Grounds</title>
+<meta name="description" content="MPG calculators and performance estimators"/>
+<meta name="robots" content="index,follow"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Gear Head Proving Grounds",
+  "url": "https://example.com",
+  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
+  "publisher": {"@type":"Organization","name":"Gear Head Proving Grounds"}
+}
+</script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="header">
+  <img src="logo.png" alt="Gear Head Proving Grounds logo"/>
+  <div>
+    <div class="site-title">Gear Head Proving Grounds</div>
+    <div style="font-size:12px;color:#666">Tools & calculators for builders, tuners & enthusiasts</div>
+  </div>
+  <nav class="nav">
+    <div class="dropdown"><a href="index.html">Home</a></div>
+    <div class="dropdown"><a href="#">Calculators ▾</a>
+      <div class="dropdown-content">
+        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="tire-wheel.html">Tire & Wheel</a></div>
+        <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="fabrication.html">Fabrication & Misc</a></div>
+      </div>
+    </div>
+    <div class="dropdown"><a href="#top">Top</a></div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="card"><h1>Fuel & Performance Calculators</h1><p class="small-muted">MPG, trip cost, horsepower, quarter-mile ET and more.</p></div>
+
+  <div class="card calc-card" id="mpg_section">
+    <div class="calc-plain">
+      <h2>Gas Mileage & Gear Ratio Calculator</h2>
+      <label>Stock Rear-End Gear Ratio:</label><input type="number" id="stockGear" placeholder="e.g. 3.55" step="0.01">
+      <label>New Rear-End Gear Ratio:</label><input type="number" id="newGear" placeholder="e.g. 4.10" step="0.01">
+      <label>Stock Tire Diameter (inches):</label><input type="number" id="stockTire" placeholder="e.g. 28" step="0.1">
+      <label>New Tire Diameter (inches):</label><input type="number" id="newTire" placeholder="e.g. 31" step="0.1">
+      <label>Miles Driven (from odometer):</label><input type="number" id="milesDriven" placeholder="e.g. 250" step="0.1">
+      <label>Gallons Used:</label><input type="number" id="gallonsUsed" placeholder="e.g. 18.5" step="0.1">
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" onclick="(function(){ const vals={stockGear:document.getElementById('stockGear').value,newGear:document.getElementById('newGear').value,stockTire:document.getElementById('stockTire').value,newTire:document.getElementById('newTire').value,milesDriven:document.getElementById('milesDriven').value,gallonsUsed:document.getElementById('gallonsUsed').value}; const res=calculateMPGInline(vals); const container=document.getElementById('mpg_result'); let html='<div class=\'result-box\'>'; for(const k in res){ html += '<div class=\'result-line\'><div class=\'result-label\'>' + k + ':</div><div class=\'result-value\'>' + res[k] + '</div></div>'; } html += '</div>'; container.innerHTML = html; })();">Calculate True MPG</button>
+        <button class="btn" onclick="document.getElementById('mpg_result').innerHTML='—';document.getElementById('stockGear').value='';document.getElementById('newGear').value='';document.getElementById('stockTire').value='';document.getElementById('newTire').value='';document.getElementById('milesDriven').value='';document.getElementById('gallonsUsed').value='';">Clear</button>
+      </div>
+      <div id="mpg_result" class="result-box">—</div>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Standard MPG Calculator</h2>
+      <form class="calc" data-id="std_mpg" onsubmit="return false;">
+        <label for="miles">Miles driven</label><input name="miles" id="miles" placeholder="e.g. 120">
+        <label for="gallons">Gallons used</label><input name="gallons" id="gallons" placeholder="e.g. 4">
+        <div style="margin-top:12px">
+          <button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button>
+        </div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Horsepower from Torque</h2>
+      <form class="calc" data-id="hp_from_torque" onsubmit="return false;">
+        <label>Torque (lb-ft)</label><input name="torque" placeholder="e.g. 400">
+        <label>Engine RPM</label><input name="rpm" placeholder="e.g. 5500">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Torque from Horsepower</h2>
+      <form class="calc" data-id="torque_from_hp" onsubmit="return false;">
+        <label>Horsepower</label><input name="hp" placeholder="e.g. 400">
+        <label>Engine RPM</label><input name="rpm" placeholder="e.g. 5500">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Quarter-Mile ET Estimator</h2>
+      <form class="calc" data-id="quarter_mile_et" onsubmit="return false;">
+        <label>Vehicle weight (lbs)</label><input name="weight" placeholder="e.g. 3500">
+        <label>Horsepower</label><input name="hp" placeholder="e.g. 400">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Estimate</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
+<script src="script.js"></script>
+</body>
+</html>

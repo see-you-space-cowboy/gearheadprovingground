@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Tire &amp; Wheel Calculators | Gear Head Proving Grounds</title>
+<meta name="description" content="Tire size conversion and speedometer correction"/>
+<meta name="robots" content="index,follow"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Gear Head Proving Grounds",
+  "url": "https://example.com",
+  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
+  "publisher": {"@type":"Organization","name":"Gear Head Proving Grounds"}
+}
+</script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="header">
+  <img src="logo.png" alt="Gear Head Proving Grounds logo"/>
+  <div>
+    <div class="site-title">Gear Head Proving Grounds</div>
+    <div style="font-size:12px;color:#666">Tools & calculators for builders, tuners & enthusiasts</div>
+  </div>
+  <nav class="nav">
+    <div class="dropdown"><a href="index.html">Home</a></div>
+    <div class="dropdown"><a href="#">Calculators ▾</a>
+      <div class="dropdown-content">
+        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="tire-wheel.html">Tire & Wheel</a></div>
+        <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="fabrication.html">Fabrication & Misc</a></div>
+      </div>
+    </div>
+    <div class="dropdown"><a href="#top">Top</a></div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="card"><h1>Tire & Wheel Calculators</h1><p class="small-muted">Tire size conversion, speedometer correction, and fitment tools.</p></div>
+
+  <div class="card calc-card" id="tire_size_section">
+    <div class="calc-plain">
+      <h2>Tire Size to Inches Converter</h2>
+      <p>Enter tire size (example: <b>275/60R15</b>)</p>
+      <input type="text" id="tireSize" placeholder="e.g. 275/60R15">
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" onclick="(function(){ const input=document.getElementById('tireSize').value; const res=convertTireString(input); const container=document.getElementById('tire_result'); if(res.error){ container.innerHTML = '<div class=\'result-box\'>'+'⚠️ '+res.error+'</div>'; return; } let html='<div class=\'result-box\'>'; for(const k in res){ html += '<div class=\'result-line\'><div class=\'result-label\'>'+k+':</div><div class=\'result-value\'>'+res[k]+'</div></div>'; } html += '</div>'; container.innerHTML = html; })();">Convert</button>
+        <button class="btn" onclick="document.getElementById('tire_result').innerHTML='—';document.getElementById('tireSize').value='';">Clear</button>
+      </div>
+      <div id="tire_result" class="result-box">—</div>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Speedometer Correction</h2>
+      <form class="calc" data-id="speedo_correction" onsubmit="return false;">
+        <label>Original diameter (in)</label><input name="old" placeholder="e.g. 26">
+        <label>New diameter (in)</label><input name="new" placeholder="e.g. 28">
+        <label>Indicated speed (mph)</label><input name="indicated" placeholder="e.g. 60">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
+<script src="script.js"></script>
+</body>
+</html>
