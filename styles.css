@@ -30,3 +30,15 @@ input, select, textarea{padding:8px;margin-top:6px;width:260px;max-width:100%;bo
 .small-muted{color:#666;font-size:0.95rem}
 .footer{padding:18px;text-align:center;color:var(--muted);border-top:1px solid #eee;margin-top:30px}
 @media(max-width:900px){.header img{height:56px}.nav{display:none}.site-title{display:none}input{width:100%}.cal-nav{justify-content:center}}
+
+
+.logo-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-box img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
