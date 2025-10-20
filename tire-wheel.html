@@ -3,17 +3,26 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Tire &amp; Wheel Calculators | Gear Head Proving Grounds</title>
-<meta name="description" content="Tire size conversion and speedometer correction"/>
+<title>Tire Size Calculator & Speedometer Correction | Gear Head Proving Grounds</title>
+<meta name="description" content="Convert tire sizes to inches, calculate overall diameter, and correct speedometer errors. Free tire size and speedometer calibration calculator for modified vehicles."/>
+<meta name="keywords" content="tire size calculator, speedometer correction, tire diameter calculator, tire conversion, speedometer calibration"/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://example.com/tire-wheel.html"/>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Gear Head Proving Grounds",
-  "url": "https://example.com",
-  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
-  "publisher": {"@type":"Organization","name":"Gear Head Proving Grounds"}
+  "@type": "WebApplication",
+  "name": "Tire Size and Speedometer Calculator",
+  "description": "Convert tire sizes and calculate speedometer corrections for modified vehicles",
+  "url": "https://example.com/tire-wheel.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 
@@ -22,64 +31,183 @@
 <body>
 
 <div class="header">
-  <img src="logo.png" alt="Gear Head Proving Grounds logo"/>
-  <div>
-    <div class="site-title">Gear Head Proving Grounds</div>
-    <div style="font-size:12px;color:#666">Tools & calculators for builders, tuners & enthusiasts</div>
-  </div>
+  <a href="index.html">
+    <img src="logo.png" alt="Gear Head Proving Grounds"/>
+  </a>
+  
+  <!-- Hamburger Menu Button (mobile only) -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
   <nav class="nav">
     <div class="dropdown"><a href="index.html">Home</a></div>
-    <div class="dropdown"><a href="#">Calculators ▾</a>
+    <div class="dropdown">
+      <a href="#">Calculators ▾</a>
       <div class="dropdown-content">
-        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
-        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="performance.html">Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Building</a></div>
+        <div><a href="fuel.html">Fuel & Airflow</a></div>
         <div><a href="tire-wheel.html">Tire & Wheel</a></div>
         <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="mpg.html">MPG</a></div>
         <div><a href="fabrication.html">Fabrication & Misc</a></div>
       </div>
     </div>
-    <div class="dropdown"><a href="#top">Top</a></div>
   </nav>
+</div>
+<div class="container">
+  <div class="card">
+    <h1>Tire Size Calculator & Speedometer Correction</h1>
+    <p class="small-muted">Convert tire sizes to overall diameter, calculate speedometer errors, and determine true speed after tire or gear changes. Essential tools for lifted trucks, modified cars, and accurate odometer readings.</p>
+  </div>
+</div>
+
+<div class="affiliate-ad container">
+  <a rel="sponsored"
+   href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
+<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="JEGS Performance Parts" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
 </div>
 
 <div class="container">
-  <div class="card"><h1>Tire & Wheel Calculators</h1><p class="small-muted">Tire size conversion, speedometer correction, and fitment tools.</p></div>
-
-  <div class="affiliate-ad container">
-  <a rel="sponsored"
-   href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
-<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
-</div>
-
   <div class="card calc-card" id="tire_size_section">
     <div class="calc-plain">
       <h2>Tire Size to Inches Converter</h2>
-      <p>Enter tire size (example: <b>275/60R15</b>)</p>
-      <input type="text" id="tireSize" placeholder="e.g. 275/60R15">
+      <p style="margin-bottom:16px;color:#555;">Convert metric tire sizes (275/60R15) to actual measurements in inches. Get section width, sidewall height, overall diameter, and circumference.</p>
+      <p>Enter tire size in format: <strong>Width/Aspect-Ratio-R-Rim-Diameter</strong> (example: <b>275/60R15</b>)</p>
+      <input type="text" id="tireSize" placeholder="e.g. 275/60R15" aria-label="Tire size in metric format">
       <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-        <button class="btn" onclick="(function(){ const input=document.getElementById('tireSize').value; const res=convertTireString(input); const container=document.getElementById('tire_result'); if(res.error){ container.innerHTML = '<div class=\'result-box\'>'+'⚠️ '+res.error+'</div>'; return; } let html='<div class=\'result-box\'>'; for(const k in res){ html += '<div class=\'result-line\'><div class=\'result-label\'>'+k+':</div><div class=\'result-value\'>'+res[k]+'</div></div>'; } html += '</div>'; container.innerHTML = html; })();">Convert</button>
+        <button class="btn" onclick="(function(){ const input=document.getElementById('tireSize').value; const res=convertTireString(input); const container=document.getElementById('tire_result'); if(res.error){ container.innerHTML = '<div class=\'result-box\'>'+'⚠️ '+res.error+'</div>'; return; } let html='<div class=\'result-box\'>'; for(const k in res){ html += '<div class=\'result-line\'><div class=\'result-label\'>'+k+':</div><div class=\'result-value\'>'+res[k]+'</div></div>'; } html += '</div>'; container.innerHTML = html; })();">Convert Tire Size</button>
         <button class="btn" onclick="document.getElementById('tire_result').innerHTML='—';document.getElementById('tireSize').value='';">Clear</button>
       </div>
       <div id="tire_result" class="result-box">—</div>
+      <div style="margin-top:12px;padding:10px;background:#f9f9f9;border-radius:6px;">
+        <p style="margin:0;font-size:0.9em;color:#555;"><strong>How to read tire sizes:</strong> In 275/60R15, "275" is section width in mm, "60" is aspect ratio (sidewall height as % of width), "R" means radial construction, "15" is rim diameter in inches.</p>
+      </div>
     </div>
   </div>
 
-  <div class="card calc-card">
+  <div class="card calc-card" id="speedo">
     <div class="calc-plain">
-      <h2>Speedometer Correction</h2>
+      <h2>Speedometer Correction Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Calculate your true speed after changing tire sizes or gear ratios. Essential for accurate speed readings and avoiding speeding tickets.</p>
       <form class="calc" data-id="speedo_correction" onsubmit="return false;">
-        <label>Original diameter (in)</label><input name="old" placeholder="e.g. 26">
-        <label>New diameter (in)</label><input name="new" placeholder="e.g. 28">
-        <label>Indicated speed (mph)</label><input name="indicated" placeholder="e.g. 60">
-        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <label>Original tire diameter (inches)</label><input name="old" placeholder="e.g. 26" aria-label="Original tire diameter">
+        <label>New tire diameter (inches)</label><input name="new" placeholder="e.g. 28" aria-label="New tire diameter">
+        <label>Indicated speed on speedometer (mph)</label><input name="indicated" placeholder="e.g. 60" aria-label="Speed shown on speedometer">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Calculate True Speed</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
         <div data-result class="result-box">—</div>
       </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;"><strong>Example:</strong> If your speedometer reads 60 MPH but you've installed larger tires, your actual speed is higher. This calculator shows your true speed.</p>
     </div>
   </div>
 
+  <!-- SEO Content -->
+  <div class="card">
+    <h2>Understanding Tire Sizes and Speedometer Accuracy</h2>
+    <p>When you change tire sizes, your speedometer and odometer become inaccurate because they're calibrated for the original tire diameter. Larger tires make your speedometer read slower than actual speed, while smaller tires make it read faster. This affects not only your speed awareness but also your odometer mileage and fuel economy calculations.</p>
+    
+    <h3>How Tire Size Affects Speed</h3>
+    <p>Your vehicle's speedometer calculates speed based on how fast the wheels are rotating. When you install larger diameter tires, each revolution covers more ground, so you're traveling faster than the speedometer indicates. For example, if you install tires that are 10% larger in diameter, your actual speed will be 10% higher than what your speedometer shows.</p>
+
+    <h3>Common Tire Size Scenarios</h3>
+    <p><strong>Lifted Trucks:</strong> Installing larger tires on lifted trucks is common but can result in significant speedometer error. A typical lift with 35" tires replacing 31" tires creates about 13% speedometer error.</p>
+    <p><strong>Plus-Sizing Wheels:</strong> When upgrading to larger diameter wheels, you typically use lower profile tires to maintain similar overall diameter. If done correctly, speedometer accuracy is maintained.</p>
+    <p><strong>Performance Cars:</strong> Performance enthusiasts often install wider tires without changing overall diameter to maintain speedometer accuracy while gaining traction.</p>
+    <p><strong>Classic Cars:</strong> Restorers may need to install modern tire sizes that differ from original equipment, requiring speedometer gear changes or electronic correction.</p>
+
+    <h3>Legal and Safety Concerns</h3>
+    <p>An inaccurate speedometer can lead to speeding tickets if you're traveling faster than you think. In some jurisdictions, an incorrect speedometer can fail vehicle inspection. Additionally, your odometer will record incorrect mileage, affecting resale value, warranty claims, and lease agreements.</p>
+
+    <h3>Speedometer Correction Solutions</h3>
+    <ul style="line-height:1.8;">
+      <li><strong>Mechanical Speedometers:</strong> Change the speedometer drive gear in the transmission to match new tire size</li>
+      <li><strong>Electronic Speedometers:</strong> Reprogram the vehicle's ECU/PCM with a tuner or install a speedometer calibrator module</li>
+      <li><strong>GPS Speedometers:</strong> Install an aftermarket GPS-based speedometer for perfect accuracy regardless of tire size</li>
+      <li><strong>Gear Ratio Change:</strong> Changing gear ratios also requires speedometer recalibration</li>
+    </ul>
+
+    <h3>Popular Tire Size Examples</h3>
+    <p><strong>275/60R15:</strong> Classic muscle car tire, 28" diameter, good for 3.73-4.10 gears</p>
+    <p><strong>285/75R16:</strong> Popular truck tire, 32.8" diameter, common on 4x4 pickups</p>
+    <p><strong>35x12.50R17:</strong> Aggressive off-road tire, 35" diameter, requires lift kit</p>
+    <p><strong>305/35R20:</strong> Performance car tire, 28.4" diameter, wide contact patch</p>
+    <p><strong>33x12.50R15:</strong> Classic off-road size, 33" diameter, Jeep favorite</p>
+
+    <h3>Related Calculators</h3>
+    <ul style="line-height:1.8;">
+      <li><a href="drivetrain.html">Gear Ratio Calculator</a> - See how tire size affects engine RPM at speed</li>
+      <li><a href="fuel-performance.html">True MPG Calculator</a> - Calculate real fuel economy with modified tires</li>
+      <li><a href="fuel-performance.html">Horsepower Calculator</a> - Determine power needed to turn larger tires</li>
+    </ul>
+  </div>
+
+  <!-- Tire Size Comparison Chart -->
+  <div class="card">
+    <h3>Common Tire Size Comparison</h3>
+    <p>Popular tire sizes and their actual measurements:</p>
+    <div style="overflow-x:auto;margin-top:12px;">
+      <table style="width:100%;border-collapse:collapse;text-align:left;">
+        <thead>
+          <tr style="background:#f0f4f8;border-bottom:2px solid #0078D7;">
+            <th style="padding:10px;font-weight:700;">Tire Size</th>
+            <th style="padding:10px;font-weight:700;">Overall Diameter</th>
+            <th style="padding:10px;font-weight:700;">Section Width</th>
+            <th style="padding:10px;font-weight:700;">Common Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">265/70R17</td>
+            <td style="padding:10px;">31.6"</td>
+            <td style="padding:10px;">10.4"</td>
+            <td style="padding:10px;">Stock truck/SUV</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">275/60R15</td>
+            <td style="padding:10px;">28.0"</td>
+            <td style="padding:10px;">10.8"</td>
+            <td style="padding:10px;">Muscle car</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">285/75R16</td>
+            <td style="padding:10px;">32.8"</td>
+            <td style="padding:10px;">11.2"</td>
+            <td style="padding:10px;">Light truck</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">295/50R15</td>
+            <td style="padding:10px;">26.6"</td>
+            <td style="padding:10px;">11.6"</td>
+            <td style="padding:10px;">Drag racing</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">305/35R20</td>
+            <td style="padding:10px;">28.4"</td>
+            <td style="padding:10px;">12.0"</td>
+            <td style="padding:10px;">Performance car</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">33x12.50R15</td>
+            <td style="padding:10px;">33.0"</td>
+            <td style="padding:10px;">12.5"</td>
+            <td style="padding:10px;">Off-road/Jeep</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">35x12.50R17</td>
+            <td style="padding:10px;">35.0"</td>
+            <td style="padding:10px;">12.5"</td>
+            <td style="padding:10px;">Lifted truck</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved | <a href="index.html" style="color:inherit;">Home</a> | <a href="drivetrain.html" style="color:inherit;">Gear Calculator</a></footer>
 <script src="script.js"></script>
 </body>
 </html>
