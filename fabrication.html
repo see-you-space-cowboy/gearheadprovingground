@@ -3,17 +3,26 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Fabrication &amp; Misc Tools | Gear Head Proving Grounds</title>
-<meta name="description" content="Injector sizing, airflow estimation, and other shop tools"/>
+<title>Free Fuel Injector Size & Airflow Calculator | Gear Head Proving Grounds</title>
+<meta name="description" content="Calculate fuel injector size for horsepower goals and estimate required airflow (CFM). Free tools for EFI conversions, turbo builds, and performance upgrades."/>
+<meta name="keywords" content="injector size calculator, fuel injector calculator, cfm calculator, airflow calculator, injector sizing"/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://example.com/fabrication.html"/>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Gear Head Proving Grounds",
-  "url": "https://example.com",
-  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
-  "publisher": {"@type":"Organization","name":"Gear Head Proving Grounds"}
+  "@type": "WebApplication",
+  "name": "Fuel System Calculator Suite",
+  "description": "Calculate fuel injector sizes and airflow requirements for performance builds",
+  "url": "https://example.com/fabrication.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 
@@ -22,63 +31,185 @@
 <body>
 
 <div class="header">
-  <img src="logo.png" alt="Gear Head Proving Grounds logo"/>
-  <div>
-    <div class="site-title">Gear Head Proving Grounds</div>
-    <div style="font-size:12px;color:#666">Tools & calculators for builders, tuners & enthusiasts</div>
-  </div>
+  <a href="index.html">
+    <img src="logo.png" alt="Gear Head Proving Grounds"/>
+  </a>
+  
+  <!-- Hamburger Menu Button (mobile only) -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
   <nav class="nav">
     <div class="dropdown"><a href="index.html">Home</a></div>
-    <div class="dropdown"><a href="#">Calculators ▾</a>
+    <div class="dropdown">
+      <a href="#">Calculators ▾</a>
       <div class="dropdown-content">
-        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
-        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="performance.html">Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Building</a></div>
+        <div><a href="fuel.html">Fuel & Airflow</a></div>
         <div><a href="tire-wheel.html">Tire & Wheel</a></div>
         <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="mpg.html">MPG</a></div>
         <div><a href="fabrication.html">Fabrication & Misc</a></div>
       </div>
     </div>
-    <div class="dropdown"><a href="#top">Top</a></div>
   </nav>
 </div>
 
 <div class="container">
-  <div class="card"><h1>Fabrication & Misc Tools</h1><p class="small-muted">Injector sizing, airflow estimation, and welding material helpers.</p></div>
-
-  <div class="affiliate-ad container">
-  <a rel="sponsored"
-   href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
-<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
+  <div class="card">
+    <h1>Free Fuel Injector & Airflow Calculators</h1>
+    <p class="small-muted">Calculate fuel injector size for horsepower goals and estimate airflow requirements. Essential tools for EFI conversions, turbo builds, and performance fuel system upgrades.</p>
+  </div>
 </div>
 
+<div class="affiliate-ad container">
+  <a rel="sponsored"
+   href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
+<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="JEGS Performance Parts" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
+</div>
+
+<div class="container">
   <div class="card calc-card">
     <div class="calc-plain">
-      <h2>Injector Size Estimator</h2>
+      <h2>Fuel Injector Size Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Calculate the minimum injector size needed to support your horsepower goal. Accounts for BSFC (fuel consumption rate) and safe duty cycle limits.</p>
       <form class="calc" data-id="injector_size" onsubmit="return false;">
-        <label>Target wheel HP</label><input name="hp" placeholder="e.g. 400">
-        <label>Number of cylinders</label><input name="cyl" placeholder="e.g. 8">
-        <label>BSFC (lb/hp-hr)</label><input name="bsfc" placeholder="e.g. 0.55">
-        <label>Duty cycle (%)</label><input name="duty" placeholder="e.g. 80">
-        <div style="margin-top:12px"><button class="btn" data-action="compute">Estimate</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <label>Target wheel horsepower</label><input name="hp" placeholder="e.g. 400" aria-label="Target horsepower at the wheels">
+        <label>Number of cylinders</label><input name="cyl" placeholder="e.g. 8" aria-label="Total number of cylinders">
+        <label>BSFC (lb/hp-hr)</label><input name="bsfc" placeholder="e.g. 0.55" aria-label="Brake Specific Fuel Consumption">
+        <label>Maximum duty cycle (%)</label><input name="duty" placeholder="e.g. 80" aria-label="Maximum injector duty cycle percentage">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Calculate Size</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
         <div data-result class="result-box">—</div>
       </form>
+      <div style="margin-top:12px;padding:10px;background:#f9f9f9;border-radius:6px;">
+        <p style="margin:0 0 8px 0;font-size:0.9em;color:#555;"><strong>BSFC Guidelines:</strong></p>
+        <ul style="margin:0;padding-left:20px;font-size:0.9em;color:#555;line-height:1.6;">
+          <li>Naturally aspirated gasoline: 0.45-0.50 lb/hp-hr</li>
+          <li>Turbocharged/supercharged: 0.55-0.65 lb/hp-hr</li>
+          <li>E85 fuel: 0.65-0.75 lb/hp-hr</li>
+        </ul>
+        <p style="margin:8px 0 0 0;font-size:0.9em;color:#555;"><strong>Duty Cycle:</strong> 80% is safe for street use, 85-90% acceptable for racing. Higher duty cycles risk fuel starvation.</p>
+      </div>
     </div>
   </div>
 
   <div class="card calc-card">
     <div class="calc-plain">
       <h2>Airflow (CFM) Estimator</h2>
+      <p style="margin-bottom:16px;color:#555;">Estimate required airflow for intake manifolds, throttle bodies, and carburetors. Based on the rule of thumb: 0.5 CFM per horsepower for naturally aspirated engines.</p>
       <form class="calc" data-id="airflow_cfm" onsubmit="return false;">
-        <label>Horsepower</label><input name="hp" placeholder="e.g. 400">
-        <div style="margin-top:12px"><button class="btn" data-action="compute">Estimate</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <label>Target horsepower</label><input name="hp" placeholder="e.g. 400" aria-label="Target engine horsepower">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Estimate CFM</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
         <div data-result class="result-box">—</div>
       </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;"><strong>Formula:</strong> CFM = HP × 0.5 (for naturally aspirated engines)</p>
+      <p style="margin-top:6px;font-size:0.9em;color:#666;"><em>Note: Forced induction applications require larger airflow capacity. This calculator provides baseline estimates for naturally aspirated engines.</em></p>
     </div>
   </div>
 
+  <!-- SEO Content -->
+  <div class="card">
+    <h2>Fuel System Sizing for Performance Builds</h2>
+    <p>Proper fuel system sizing is critical for reliability and performance. Undersized injectors run at excessive duty cycles and can't deliver enough fuel, causing lean conditions and engine damage. Oversized injectors make tuning difficult at idle and light throttle. These calculators help you select correctly-sized components.</p>
+    
+    <h3>Understanding Injector Flow Ratings</h3>
+    <p>Fuel injectors are rated in pounds per hour (lb/hr) or cubic centimeters per minute (cc/min) at a specific fuel pressure, typically 43.5 PSI (3 bar). Common conversions:</p>
+    <ul style="line-height:1.8;">
+      <li>30 lb/hr = 315 cc/min (stock economy car)</li>
+      <li>42 lb/hr = 440 cc/min (stock V8 truck)</li>
+      <li>60 lb/hr = 630 cc/min (mild performance build)</li>
+      <li>80 lb/hr = 840 cc/min (serious street performance)</li>
+      <li>120 lb/hr = 1260 cc/min (high horsepower/racing)</li>
+    </ul>
+
+    <h3>BSFC Explained</h3>
+    <p>Brake Specific Fuel Consumption (BSFC) measures how efficiently an engine converts fuel into power. Lower numbers indicate better efficiency. Naturally aspirated engines typically achieve 0.45-0.50 lb/hp-hr under ideal conditions. Forced induction engines run richer for safety and cooling, resulting in higher BSFC values around 0.55-0.65. E85 fuel requires even more volume due to lower energy density, pushing BSFC to 0.65-0.75.</p>
+
+    <h3>Injector Duty Cycle</h3>
+    <p>Duty cycle represents the percentage of time an injector is open (flowing fuel) during each engine cycle. An 80% duty cycle means the injector is open 80% of the available time and closed 20%. Running injectors above 90% duty cycle is dangerous because there's insufficient time to deliver fuel during high-load conditions, potentially causing catastrophic engine damage from detonation.</p>
+
+    <h3>Airflow Requirements</h3>
+    <p>The 0.5 CFM per horsepower rule provides a starting point for sizing intake systems. A 400 HP engine needs approximately 200 CFM of airflow. However, this is conservative—many high-performance engines achieve better volumetric efficiency and may require 0.6-0.7 CFM per HP. Forced induction applications need even more airflow capacity to account for boost pressure.</p>
+
+    <h3>Real-World Examples</h3>
+    <p><strong>500 HP Naturally Aspirated LS3:</strong> Using BSFC of 0.50 at 80% duty cycle requires 47 lb/hr injectors per cylinder (376 lb/hr total for 8 cylinders).</p>
+    <p><strong>600 HP Turbocharged 2JZ:</strong> Using BSFC of 0.60 at 85% duty cycle requires 70 lb/hr injectors per cylinder (420 lb/hr total for 6 cylinders).</p>
+    <p><strong>800 HP E85 Big Block:</strong> Using BSFC of 0.70 at 80% duty cycle requires 88 lb/hr injectors per cylinder (704 lb/hr total for 8 cylinders).</p>
+
+    <h3>Upgrading Your Fuel System</h3>
+    <p>When increasing horsepower significantly, you may need to upgrade multiple fuel system components:</p>
+    <ul style="line-height:1.8;">
+      <li><strong>Fuel Injectors:</strong> Primary limitation for EFI systems, easiest to upgrade</li>
+      <li><strong>Fuel Pump:</strong> Must supply sufficient volume and pressure for all injectors at full duty cycle</li>
+      <li><strong>Fuel Rails:</strong> Larger diameter rails maintain consistent pressure across all cylinders</li>
+      <li><strong>Fuel Lines:</strong> Larger diameter lines reduce pressure drop, typically -6 AN or -8 AN for high HP</li>
+      <li><strong>Fuel Pressure Regulator:</strong> Adjustable regulators allow tuning for different injector sizes and boost levels</li>
+    </ul>
+
+    <h3>Related Calculators</h3>
+    <ul style="line-height:1.8;">
+      <li><a href="engine-calculators.html">Engine Displacement Calculator</a> - Determine your engine's cubic inch displacement</li>
+      <li><a href="fuel-performance.html">Horsepower Calculator</a> - Calculate horsepower from torque and RPM</li>
+      <li><a href="fuel-performance.html">Quarter-Mile Calculator</a> - Estimate performance with your power goal</li>
+    </ul>
+  </div>
+
+  <!-- Injector Size Quick Reference -->
+  <div class="card">
+    <h3>Common Injector Sizes by Horsepower</h3>
+    <p>Approximate injector sizes for V8 engines at 80% duty cycle with gasoline (BSFC 0.50):</p>
+    <div style="overflow-x:auto;margin-top:12px;">
+      <table style="width:100%;border-collapse:collapse;text-align:left;">
+        <thead>
+          <tr style="background:#f0f4f8;border-bottom:2px solid #0078D7;">
+            <th style="padding:10px;font-weight:700;">Target HP</th>
+            <th style="padding:10px;font-weight:700;">Injector Size</th>
+            <th style="padding:10px;font-weight:700;">Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">300 HP</td>
+            <td style="padding:10px;">30 lb/hr</td>
+            <td style="padding:10px;">Stock/mild performance</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">400 HP</td>
+            <td style="padding:10px;">40 lb/hr</td>
+            <td style="padding:10px;">Bolt-on performance</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">500 HP</td>
+            <td style="padding:10px;">48 lb/hr</td>
+            <td style="padding:10px;">Cam, heads, intake</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">600 HP</td>
+            <td style="padding:10px;">58 lb/hr</td>
+            <td style="padding:10px;">Stroker, forced induction</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">750 HP</td>
+            <td style="padding:10px;">72 lb/hr</td>
+            <td style="padding:10px;">Serious boost/nitrous</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">1000 HP</td>
+            <td style="padding:10px;">95 lb/hr</td>
+            <td style="padding:10px;">Race/extreme builds</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px;font-size:0.9em;color:#666;"><em>Note: These are estimates for naturally aspirated or mild boost applications. E85 and high-boost applications require larger injectors.</em></p>
+  </div>
 </div>
 
-<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved | <a href="index.html" style="color:inherit;">Home</a> | <a href="engine-calculators.html" style="color:inherit;">Engine Tools</a></footer>
 <script src="script.js"></script>
 </body>
 </html>
