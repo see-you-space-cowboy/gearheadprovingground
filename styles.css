@@ -1,34 +1,222 @@
-/* Shared styles for Gear Head Proving Grounds */
-:root{--accent:#0078D7;--bg:#ffffff;--text:#111;--muted:#666}
-*{box-sizing:border-box}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-.header{display:flex;align-items:center;gap:16px;padding:12px 20px;border-bottom:1px solid #eee;position:sticky;top:0;background:var(--bg);z-index:999;box-shadow:0 2px 6px rgba(0,0,0,0.03)}
-.header img{height:72px}
-.site-title{font-weight:800;font-size:18px}
-.nav{margin-left:auto}
-.nav a{color:var(--text);text-decoration:none;margin:0 6px;position:relative;padding:10px 12px;border-radius:6px;display:inline-block;line-height:1.6}
-.nav a:hover{background:#f3f8fd}
-.dropdown{position:relative;display:inline-block}
-.dropdown-content{display:none;position:absolute;background:white;min-width:260px;box-shadow:0 8px 24px rgba(30,30,30,0.08);z-index:30;border-radius:6px;padding:10px 12px;line-height:2.0}
-.dropdown:hover .dropdown-content{display:block}
-.container{max-width:1100px;margin:20px auto;padding:0 16px; margin-left: auto; margin-right: auto;}
-.hero{padding:36px 16px;background:linear-gradient(180deg,#fff,#fbfdff);border-bottom:1px solid #f0f4f8}
-.card{background:#fff;border:1px solid #eee;padding:16px;border-radius:8px;margin:12px 0;box-shadow:0 1px 0 rgba(0,0,0,0.02)}
-h1,h2{margin:6px 0}
-label{display:block;margin-top:10px;font-weight:600}
-input, select, textarea{padding:8px;margin-top:6px;width:260px;max-width:100%;border:1px solid #ccc;border-radius:6px}
-.btn{background:var(--accent);color:white;padding:8px 12px;border:none;border-radius:6px;cursor:pointer;margin-top:10px}
-.result-box{margin-top:10px;padding:12px;background:#f3f7fb;border:1px solid #d7eaf8;border-radius:8px;font-size:1rem;color:#05213a}
-.result-line{display:flex;justify-content:space-between;gap:8px}
-.result-label{color:#244;opacity:.9}
-.result-value{color:var(--accent);font-weight:700}
-.calc-card{max-width:900px;margin:auto}
-.calc-plain{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-.small-muted{color:#666;font-size:0.95rem}
-.footer{padding:18px;text-align:center;color:var(--muted);border-top:1px solid #eee;margin-top:30px}
-@media(max-width:900px){.header img{height:56px}.nav{display:none}.site-title{display:none}input{width:100%}.cal-nav{justify-content:center}}
+/* ========================================
+   Gear Head Proving Grounds Stylesheet
+   ======================================== */
 
-/* --- Logo box styling --- */
+/* --- CSS Variables --- */
+:root {
+  --accent: #0078D7;
+  --bg: #ffffff;
+  --text: #111;
+  --muted: #666;
+}
+
+/* --- Global Resets --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.header img {
+  height: 72px;
+}
+
+.header a {
+  display: block;
+  line-height: 0;
+}
+
+.site-title {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* --- Navigation --- */
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  background: #f3f8fd;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 260px;
+  box-shadow: 0 8px 24px rgba(30,30,30,0.08);
+  z-index: 30;
+  border-radius: 6px;
+  padding: 10px 12px;
+  line-height: 2.0;
+  right: 0;
+}
+
+.dropdown-content div a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.dropdown-content div a:hover {
+  background: #f3f8fd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* --- Containers --- */
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero {
+  padding: 36px 16px;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  border-bottom: 1px solid #f0f4f8;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 12px 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+/* --- Typography --- */
+h1, h2 {
+  margin: 6px 0;
+}
+
+/* --- Forms --- */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  padding: 8px;
+  margin-top: 6px;
+  width: 260px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* --- Calculator Results --- */
+.result-box {
+  margin-top: 10px;
+  padding: 12px;
+  background: #f3f7fb;
+  border: 1px solid #d7eaf8;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #05213a;
+}
+
+.result-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.result-label {
+  color: #244;
+  opacity: .9;
+}
+
+.result-value {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* --- Calculator Styling --- */
+.calc-card {
+  max-width: 900px;
+  margin: auto;
+}
+
+.calc-plain {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.small-muted {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* --- Footer --- */
+.footer {
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+}
+
+/* --- Logo Box --- */
 .logo-box {
   text-align: center;
   padding: 20px;
@@ -39,7 +227,7 @@ input, select, textarea{padding:8px;margin-top:6px;width:260px;max-width:100%;bo
   height: auto;
 }
 
-/* --- Fix affiliate ad centering --- */
+/* --- Affiliate Ad Centering --- */
 .affiliate-ad {
   display: flex;
   justify-content: center;
@@ -61,7 +249,7 @@ input, select, textarea{padding:8px;margin-top:6px;width:260px;max-width:100%;bo
   display: block;
 }
 
-/* --- Centers the categories card and links --- */
+/* --- Calculator Navigation Links --- */
 .cal-nav {
   display: flex;
   flex-wrap: wrap;
@@ -88,7 +276,7 @@ input, select, textarea{padding:8px;margin-top:6px;width:260px;max-width:100%;bo
   background: #005fa3;
 }
 
-/* --- Sticky footer layout fix --- */
+/* --- Sticky Footer Layout --- */
 html, body {
   height: 100%;
   display: flex;
@@ -109,4 +297,149 @@ main {
 
 .footer {
   margin-top: auto;
+}
+
+/* ========================================
+   HAMBURGER MENU STYLES
+   ======================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger animation when menu is open */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+   ======================================== */
+
+@media(max-width: 900px) {
+  /* Header adjustments */
+  .header {
+    position: relative;
+  }
+  
+  .header img {
+    height: 56px;
+  }
+  
+  .site-title {
+    display: none;
+  }
+  
+  /* Form inputs full width on mobile */
+  input {
+    width: 100%;
+  }
+  
+  .cal-nav {
+    justify-content: center;
+  }
+  
+  /* Hide desktop nav, show hamburger */
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    align-items: stretch;
+  }
+  
+  .nav.active {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: flex !important;
+    order: 10;
+  }
+  
+  /* Mobile nav styling */
+  .nav .dropdown {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+  
+  .nav .dropdown > a {
+    display: block;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    background: #f9f9f9;
+  }
+  
+  .nav .dropdown-content {
+    position: static;
+    display: none;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    padding: 0;
+    background: #fff;
+    border-radius: 0;
+    border-left: 3px solid var(--accent);
+  }
+  
+  .nav .dropdown-content.active {
+    display: block;
+  }
+  
+  .nav .dropdown-content div {
+    margin: 0;
+  }
+  
+  .nav .dropdown-content a {
+    display: block;
+    padding: 14px 16px 14px 24px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    background: white;
+  }
+  
+  .nav .dropdown-content a:hover {
+    background: #f3f8fd;
+  }
+  
+  .nav .dropdown-content a:last-child {
+    border-bottom: none;
+  }
 }
