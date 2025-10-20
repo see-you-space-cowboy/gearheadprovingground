@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Free MPG Calculator with Gear Ratio Correction | Gear Head Proving Grounds</title>
+<meta name="description" content="Calculate true MPG with gear ratio and tire size corrections. Free gas mileage calculator for modified vehicles. Get accurate fuel economy readings after gear or tire changes."/>
+<meta name="keywords" content="mpg calculator, gas mileage calculator, fuel economy calculator, true mpg, gear ratio mpg, tire size mpg"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://example.com/mpg.html"/>
+
+<meta property="og:title" content="Free MPG Calculator with Gear Ratio Correction"/>
+<meta property="og:description" content="Calculate true fuel economy after gear or tire changes"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://example.com/mpg.html"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MPG Calculator with Gear Ratio Correction",
+  "description": "Calculate true fuel economy accounting for gear ratio and tire size modifications",
+  "url": "https://example.com/mpg.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is my MPG reading incorrect after changing gears or tires?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your vehicle's odometer and speedometer are calibrated for the original tire size and gear ratio. When you change either, the distance traveled per wheel revolution changes, making your odometer read incorrectly. This affects MPG calculations because the miles driven reading is wrong. Our True MPG Calculator corrects for these changes."
+    }
+  },{
+    "@type": "Question",
+    "name": "How do I calculate true MPG with bigger tires?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To calculate true MPG with bigger tires, you need to know your stock tire diameter, new tire diameter, odometer miles, and gallons used. The correction factor is (New Tire Diameter / Stock Tire Diameter). Multiply your calculated MPG by this factor to get true fuel economy."
+    }
+  },{
+    "@type": "Question",
+    "name": "Do lower gears reduce fuel economy?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, lower numerical gear ratios (higher like 4.10 vs 3.55) increase engine RPM at any given speed, which typically reduces fuel economy. However, they also make your speedometer read slower than actual speed, which can make your calculated MPG appear better than reality. Always use corrected MPG calculations."
+    }
+  }]
+}
+</script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">
+    <img src="logo.png" alt="Gear Head Proving Grounds"/>
+  </a>
+  
+  <!-- Hamburger Menu Button (mobile only) -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <nav class="nav">
+    <div class="dropdown"><a href="index.html">Home</a></div>
+    <div class="dropdown">
+      <a href="#">Calculators ▾</a>
+      <div class="dropdown-content">
+        <div><a href="performance.html">Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Building</a></div>
+        <div><a href="fuel.html">Fuel & Airflow</a></div>
+        <div><a href="tire-wheel.html">Tire & Wheel</a></div>
+        <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="mpg.html">MPG</a></div>
+        <div><a href="fabrication.html">Fabrication & Misc</a></div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h1>MPG Calculator with Gear Ratio & Tire Size Correction</h1>
+    <p class="small-muted">Calculate true fuel economy for modified vehicles. Get accurate MPG readings after changing gears, tires, or both. Essential for trucks, lifted vehicles, and performance builds.</p>
+  </div>
+</div>
+
+<div class="affiliate-ad container">
+  <a rel="sponsored"
+   href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
+<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="JEGS Performance Parts" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
+</div>
+
+<div class="container">
+  <div class="card calc-card" id="mpg_section">
+    <div class="calc-plain">
+      <h2>True MPG Calculator with Gear & Tire Correction</h2>
+      <p style="margin-bottom:16px;color:#555;">Changed gears or tires? Your speedometer and odometer are now incorrect. This calculator determines your actual fuel economy by correcting for drivetrain modifications.</p>
+      <label>Stock Rear-End Gear Ratio:</label><input type="number" id="stockGear" placeholder="e.g. 3.55" step="0.01" aria-label="Original gear ratio">
+      <label>New Rear-End Gear Ratio:</label><input type="number" id="newGear" placeholder="e.g. 4.10" step="0.01" aria-label="New gear ratio">
+      <label>Stock Tire Diameter (inches):</label><input type="number" id="stockTire" placeholder="e.g. 28" step="0.1" aria-label="Original tire diameter">
+      <label>New Tire Diameter (inches):</label><input type="number" id="newTire" placeholder="e.g. 31" step="0.1" aria-label="New tire diameter">
+      <label>Miles Driven (from odometer):</label><input type="number" id="milesDriven" placeholder="e.g. 250" step="0.1" aria-label="Miles shown on odometer">
+      <label>Gallons Used:</label><input type="number" id="gallonsUsed" placeholder="e.g. 18.5" step="0.1" aria-label="Gallons of fuel used">
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" onclick="(function(){ const vals={stockGear:document.getElementById('stockGear').value,newGear:document.getElementById('newGear').value,stockTire:document.getElementById('stockTire').value,newTire:document.getElementById('newTire').value,milesDriven:document.getElementById('milesDriven').value,gallonsUsed:document.getElementById('gallonsUsed').value}; const res=calculateMPGInline(vals); const container=document.getElementById('mpg_result'); let html='<div class=\'result-box\'>'; for(const k in res){ html += '<div class=\'result-line\'><div class=\'result-label\'>' + k + ':</div><div class=\'result-value\'>' + res[k] + '</div></div>'; } html += '</div>'; container.innerHTML = html; })();">Calculate True MPG</button>
+        <button class="btn" onclick="document.getElementById('mpg_result').innerHTML='—';document.getElementById('stockGear').value='';document.getElementById('newGear').value='';document.getElementById('stockTire').value='';document.getElementById('newTire').value='';document.getElementById('milesDriven').value='';document.getElementById('gallonsUsed').value='';">Clear</button>
+      </div>
+      <div id="mpg_result" class="result-box">—</div>
+      <div style="margin-top:16px;padding:12px;background:#f9f9f9;border-radius:6px;">
+        <p style="margin:0 0 8px 0;font-weight:600;color:#333;">How to Use:</p>
+        <ol style="margin:0;padding-left:20px;font-size:0.95em;line-height:1.6;color:#555;">
+          <li>Enter your original (stock) gear ratio and tire diameter</li>
+          <li>Enter your current (new) gear ratio and tire diameter</li>
+          <li>Fill a full tank, reset trip odometer, drive normally</li>
+          <li>Refill tank and note gallons used and miles from odometer</li>
+          <li>Click Calculate to see your true fuel economy</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Standard MPG Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Simple fuel economy calculator for stock vehicles or tracking fuel efficiency over time. Just enter miles driven and gallons used.</p>
+      <form class="calc" data-id="std_mpg" onsubmit="return false;">
+        <label for="miles">Miles driven</label><input name="miles" id="miles" placeholder="e.g. 120" aria-label="Miles driven">
+        <label for="gallons">Gallons used</label><input name="gallons" id="gallons" placeholder="e.g. 4" aria-label="Gallons of fuel">
+        <div style="margin-top:12px">
+          <button class="btn" data-action="compute">Compute MPG</button> <button class="btn" type="button" data-action="clear">Clear</button>
+        </div>
+        <div data-result class="result-box">—</div>
+      </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;">Formula: MPG = Miles Driven / Gallons Used</p>
+    </div>
+  </div>
+
+  <!-- SEO Content -->
+  <div class="card">
+    <h2>Why Your MPG Reading is Wrong After Modifications</h2>
+    <p>When you change gear ratios or tire sizes, your vehicle's computer and mechanical systems are no longer calibrated correctly. The odometer measures distance based on wheel rotations, which changes when tire diameter changes. Similarly, gear ratio changes affect how many times your wheels rotate per mile traveled.</p>
+    
+    <h3>How Gear Ratios Affect Fuel Economy</h3>
+    <p><strong>Lower Numerical Ratios (2.73, 3.08, 3.23):</strong> These "taller" gears reduce engine RPM at highway speeds, which generally improves fuel economy. Your engine works less to maintain speed. However, acceleration suffers and you may need to downshift more often.</p>
+    <p><strong>Higher Numerical Ratios (3.73, 4.10, 4.56):</strong> These "shorter" gears increase engine RPM at all speeds, typically reducing fuel economy. They provide better acceleration and towing capacity but your engine works harder on the highway.</p>
+
+    <h3>How Tire Size Affects MPG</h3>
+    <p><strong>Larger Tires:</strong> Bigger diameter tires act like taller gearing. Each revolution covers more ground, effectively raising your gear ratio. This can improve highway fuel economy but may hurt city MPG due to increased rotational mass. Your speedometer will read slower than actual speed, and your odometer will record fewer miles than you actually travel.</p>
+    <p><strong>Smaller Tires:</strong> Smaller diameter tires act like shorter gearing. They increase engine RPM at all speeds and typically reduce fuel economy. Your speedometer reads faster than actual speed, and your odometer overcounts miles traveled.</p>
+
+    <h3>Real-World Examples</h3>
+    <p><strong>Example 1 - Lifted Truck:</strong> You install 35" tires to replace stock 31" tires on your truck. Your odometer now reads 12.9% fewer miles than you actually drive (35/31 = 1.129). If your odometer shows 20 MPG, your true MPG is actually 17.7 MPG.</p>
+    <p><strong>Example 2 - Gear Change:</strong> You swap from 3.55 gears to 4.10 gears for better towing. Your speedometer now reads 15.5% slower than actual speed (4.10/3.55 = 1.155). If you calculate 18 MPG based on your odometer, your true MPG is actually 15.6 MPG.</p>
+    <p><strong>Example 3 - Both Changed:</strong> You install 4.10 gears and 33" tires replacing 3.73 gears and 31" tires. The correction factor is (33/31) × (3.73/4.10) = 0.966. Your actual MPG is 3.4% lower than your odometer calculation.</p>
+
+    <h3>The Math Behind the Calculator</h3>
+    <p>The correction formula accounts for both tire diameter and gear ratio changes:</p>
+    <p><strong>Correction Factor = (New Tire Diameter / Stock Tire Diameter) × (Stock Gear Ratio / New Gear Ratio)</strong></p>
+    <p>Multiply your odometer-based MPG by this factor to get true fuel economy. If the factor is greater than 1.0, your actual MPG is better than the odometer suggests. If less than 1.0, your actual MPG is worse.</p>
+
+    <h3>Why Accurate MPG Matters</h3>
+    <ul style="line-height:1.8;">
+      <li><strong>Budgeting:</strong> Know your real fuel costs for trips and daily driving</li>
+      <li><strong>Performance Tuning:</strong> Evaluate whether modifications help or hurt efficiency</li>
+      <li><strong>Troubleshooting:</strong> Identify fuel system problems or tuning issues</li>
+      <li><strong>Comparisons:</strong> Accurately compare different gear ratios or tire sizes</li>
+      <li><strong>Resale Value:</strong> Provide accurate fuel economy data to potential buyers</li>
+    </ul>
+
+    <h3>Tips for Improving Fuel Economy</h3>
+    <p><strong>Gear Ratio Selection:</strong> For highway driving, choose the lowest numerical ratio your engine can pull comfortably in top gear at cruising speed. For city driving or towing, higher numerical ratios may be necessary despite the fuel economy penalty.</p>
+    <p><strong>Tire Selection:</strong> Lighter tires with lower rolling resistance improve MPG. Avoid unnecessary oversizing. If you need larger tires for clearance, consider adjusting your gear ratio to compensate for the effective gear ratio change.</p>
+    <p><strong>Driving Habits:</strong> Smooth acceleration, maintaining steady speeds, and anticipating stops dramatically improve fuel economy regardless of gear ratio or tire size.</p>
+
+    <h3>Related Calculators</h3>
+    <ul style="line-height:1.8;">
+      <li><a href="drivetrain.html">Gear Ratio Calculator</a> - See how different gears affect engine RPM at speed</li>
+      <li><a href="tire-wheel.html">Tire Size Calculator</a> - Convert tire sizes and calculate diameter</li>
+      <li><a href="tire-wheel.html#speedo">Speedometer Correction</a> - Calculate your true speed after modifications</li>
+      <li><a href="performance.html">Horsepower Calculator</a> - Convert between horsepower and torque</li>
+    </ul>
+  </div>
+
+  <!-- MPG Comparison Chart -->
+  <div class="card">
+    <h3>Gear Ratio Impact on Highway MPG</h3>
+    <p>Estimated MPG change for highway driving (assumes constant speed, no other changes):</p>
+    <div style="overflow-x:auto;margin-top:12px;">
+      <table style="width:100%;border-collapse:collapse;text-align:left;">
+        <thead>
+          <tr style="background:#f0f4f8;border-bottom:2px solid #0078D7;">
+            <th style="padding:10px;font-weight:700;">From Gear</th>
+            <th style="padding:10px;font-weight:700;">To Gear</th>
+            <th style="padding:10px;font-weight:700;">RPM Change @ 65 MPH</th>
+            <th style="padding:10px;font-weight:700;">Estimated MPG Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">3.73</td>
+            <td style="padding:10px;">3.23</td>
+            <td style="padding:10px;">-13.4%</td>
+            <td style="padding:10px;">+8% to +12%</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">3.73</td>
+            <td style="padding:10px;">4.10</td>
+            <td style="padding:10px;">+9.9%</td>
+            <td style="padding:10px;">-6% to -10%</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">4.10</td>
+            <td style="padding:10px;">3.55</td>
+            <td style="padding:10px;">-13.4%</td>
+            <td style="padding:10px;">+8% to +12%</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">3.55</td>
+            <td style="padding:10px;">4.56</td>
+            <td style="padding:10px;">+28.5%</td>
+            <td style="padding:10px;">-15% to -20%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px;font-size:0.9em;color:#666;"><em>Actual results vary based on engine efficiency, aerodynamics, vehicle weight, and driving conditions. City MPG changes are typically smaller than highway changes.</em></p>
+  </div>
+</div>
+
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved | <a href="index.html" style="color:inherit;">Home</a> | <a href="drivetrain.html" style="color:inherit;">Gear Calculator</a></footer>
+<script src="script.js"></script>
+</body>
+</html>

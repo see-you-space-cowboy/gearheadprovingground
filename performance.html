@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Free MPG Calculator & Horsepower Tools | Gear Head Proving Grounds</title>
+<meta name="description" content="Calculate true MPG with gear ratio corrections, estimate quarter-mile ET, convert horsepower to torque, and analyze fuel economy. Free automotive performance calculators."/>
+<meta name="keywords" content="mpg calculator, fuel economy calculator, horsepower calculator, torque calculator, quarter mile calculator, gas mileage calculator"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://example.com/fuel-performance.html"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "MPG and Performance Calculator Suite",
+  "description": "Calculate fuel economy, horsepower, torque, and quarter-mile performance",
+  "url": "https://example.com/fuel-performance.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">
+    <img src="logo.png" alt="Gear Head Proving Grounds"/>
+  </a>
+  
+  <!-- Hamburger Menu Button (mobile only) -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <nav class="nav">
+    <div class="dropdown"><a href="index.html">Home</a></div>
+    <div class="dropdown">
+      <a href="#">Calculators ▾</a>
+      <div class="dropdown-content">
+        <div><a href="performance.html">Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Building</a></div>
+        <div><a href="fuel.html">Fuel & Airflow</a></div>
+        <div><a href="tire-wheel.html">Tire & Wheel</a></div>
+        <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="mpg.html">MPG</a></div>
+        <div><a href="fabrication.html">Fabrication & Misc</a></div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h1>Performance Tools</h1>
+    <p class="small-muted">Estimate horsepower and torque, predict quarter-mile times, and optimize your vehicle's performance.</p>
+  </div>
+</div>
+
+<div class="affiliate-ad container">
+  <a rel="sponsored"
+   href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
+<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="JEGS Performance Parts" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
+</div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Horsepower from Torque Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Convert torque measurements to horsepower at any RPM. Essential for dyno results and engine performance analysis.</p>
+      <form class="calc" data-id="hp_from_torque" onsubmit="return false;">
+        <label>Torque (lb-ft)</label><input name="torque" placeholder="e.g. 400" aria-label="Torque in pound-feet">
+        <label>Engine RPM</label><input name="rpm" placeholder="e.g. 5500" aria-label="Engine speed in RPM">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute HP</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;">Formula: HP = (Torque × RPM) / 5252</p>
+    </div>
+  </div>
+
+  <div class="card calc-card">
+    <div class="calc-plain">
+      <h2>Torque from Horsepower Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Calculate torque output from horsepower and RPM. Useful for comparing engine specifications and determining low-end power.</p>
+      <form class="calc" data-id="torque_from_hp" onsubmit="return false;">
+        <label>Horsepower</label><input name="hp" placeholder="e.g. 400" aria-label="Horsepower">
+        <label>Engine RPM</label><input name="rpm" placeholder="e.g. 5500" aria-label="Engine speed in RPM">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute Torque</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;">Formula: Torque = (HP × 5252) / RPM</p>
+    </div>
+  </div>
+
+  <div class="card calc-card" id="quarter">
+    <div class="calc-plain">
+      <h2>Quarter-Mile ET Estimator</h2>
+      <p style="margin-bottom:16px;color:#555;">Estimate your vehicle's quarter-mile elapsed time based on weight and horsepower. Great for predicting drag strip performance before modifications.</p>
+      <form class="calc" data-id="quarter_mile_et" onsubmit="return false;">
+        <label>Vehicle weight (lbs)</label><input name="weight" placeholder="e.g. 3500" aria-label="Total vehicle weight in pounds">
+        <label>Horsepower (at wheels)</label><input name="hp" placeholder="e.g. 400" aria-label="Wheel horsepower">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Estimate ET</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <div data-result class="result-box">—</div>
+      </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;"><em>Note: Actual times vary significantly based on traction, driver skill, transmission type, and aerodynamics. This formula provides a baseline estimate.</em></p>
+    </div>
+  </div>
+
+  <!-- SEO Content -->
+  <div class="card">
+    <h2>Understanding Fuel Economy and Performance</h2>
+    <p>These calculators help you measure, track, and optimize your vehicle's fuel economy and performance. Whether you're trying to save money at the pump or maximize acceleration, understanding these relationships is crucial.</p>
+    
+    <h3>Why Gear Ratios Affect MPG</h3>
+    <p>When you change gear ratios or tire sizes, your speedometer and odometer no longer read correctly. A taller gear ratio (lower numerical value) or larger tires will make your odometer read fewer miles than you actually traveled, giving you an artificially high MPG reading. Our True MPG Calculator corrects for these modifications to show your real fuel economy.</p>
+    
+    <h3>Horsepower vs. Torque</h3>
+    <p>Horsepower and torque are mathematically related but represent different aspects of engine performance. Torque measures the rotational force your engine produces, while horsepower measures how quickly that force can be applied. High torque at low RPM provides strong acceleration and towing capability, while high horsepower at high RPM enables high top speeds.</p>
+
+    <h3>Related Calculators</h3>
+    <ul style="line-height:1.8;">
+      <li><a href="drivetrain.html">Gear Ratio Calculator</a> - Calculate RPM at any speed with different gear ratios</li>
+      <li><a href="engine-calculators.html">Engine Displacement Calculator</a> - Determine your engine's cubic inch and liter displacement</li>
+      <li><a href="tire-wheel.html">Speedometer Correction</a> - Fix speedometer errors from gear or tire changes</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved | <a href="index.html" style="color:inherit;">Home</a> | <a href="drivetrain.html" style="color:inherit;">Gear Calculator</a></footer>
+<script src="script.js"></script>
+</body>
+</html>
