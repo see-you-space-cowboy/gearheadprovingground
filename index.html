@@ -3,17 +3,19 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Gear Head Proving Grounds</title>
-<meta name="description" content="Automotive calculators and tools for gear heads."/>
+<title>Free Automotive Calculators - Gear Ratio, MPG, Engine Tools | Gear Head Proving Grounds</title>
+<meta name="description" content="Free automotive performance calculators including gear ratio, RPM, MPG, engine displacement, compression ratio, tire size, and more. Essential tools for car enthusiasts, builders, and tuners."/>
+<meta name="keywords" content="automotive calculator, gear ratio calculator, mpg calculator, engine calculator, performance calculator, car calculator"/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://example.com/"/>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Gear Head Proving Ground",
+  "name": "Gear Head Proving Grounds",
   "url": "https://example.com",
-  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
-  "publisher": {"@type":"Organization","name":"Gear Head Proving Ground"}
+  "description": "Free automotive performance, engine, and fuel economy calculators for car enthusiasts, builders, and tuners."
 }
 </script>
 
@@ -21,52 +23,134 @@
 </head>
 <body>
 
-
 <div class="header">
-  <img src="logo.png" alt="Gear Head Proving Ground logo"/>
+  <a href="index.html">
+    <img src="logo.png" alt="Gear Head Proving Grounds"/>
+  </a>
+  
+  <!-- Hamburger Menu Button (mobile only) -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
   <nav class="nav">
     <div class="dropdown"><a href="index.html">Home</a></div>
-    <div class="dropdown"><a href="#">Calculators ▾</a>
+    <div class="dropdown">
+      <a href="#">Calculators ▾</a>
       <div class="dropdown-content">
-        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
-        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="performance.html">Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Building</a></div>
+        <div><a href="fuel.html">Fuel & Airflow</a></div>
         <div><a href="tire-wheel.html">Tire & Wheel</a></div>
         <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="mpg.html">MPG</a></div>
         <div><a href="fabrication.html">Fabrication & Misc</a></div>
       </div>
     </div>
-    <div class="dropdown"><a href="#top">Top</a></div>
   </nav>
 </div>
 
 <div class="hero container">
   <div class="card">
     <h1>Gear Head Proving Grounds</h1>
-    <p class="small-muted">Automotive calculators and tools for gear heads who love precision, performance, and fabrication.</p>
+    <p style="font-size:1.1em;line-height:1.6;margin:12px 0;">Free automotive calculators and tools for gear heads who love precision, performance, and fabrication. Calculate gear ratios, MPG, engine specs, and more.</p>
+    <p class="small-muted">Professional-grade calculators for enthusiasts, builders, tuners, and racers. No sign-up required, completely free to use.</p>
   </div>
 </div>
 
 <div class="affiliate-ad container">
-  <!-- JEGS ad (unchanged) -->
-          <a rel="sponsored"
-           href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
-<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
+  <a rel="sponsored" href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top">
+    <img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="JEGS Performance Parts" width="300" height="250"/>
+  </a>
+  <img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
 </div>
 
 <div class="container">
   <div class="card">
-  <h2>Calculator Categories</h2>
-  <div class="cal-nav">
-    <a href="fuel-performance.html">Fuel & Performance</a>
-    <a href="engine-calculators.html">Engine Calculators</a>
-    <a href="tire-wheel.html">Tire & Wheel</a>
-    <a href="drivetrain.html">Drivetrain</a>
-    <a href="fabrication.html">Fabrication</a>
+    <h2>Free Automotive Calculator Categories</h2>
+    <p style="margin-bottom:20px;">Choose from our comprehensive collection of automotive calculators designed for performance enthusiasts, engine builders, and vehicle modifiers.</p>
+    <div class="cal-nav">
+      <a href="performance.html">Performance</a>
+      <a href="engine-calculators.html">Engine Building</a>
+      <a href="fuel.html">Fuel & Airflow</a>
+      <a href="tire-wheel.html">Tire & Wheel</a>
+      <a href="drivetrain.html">Drivetrain</a>
+      <a href="mpg.html">MPG</a>
+    </div>
+  </div>
+
+  <!-- Featured Calculators -->
+  <div class="card">
+    <h2>Popular Calculators</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px;">
+      <div style="padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;">
+        <h3 style="margin:0 0 8px 0;font-size:1.1em;color:#0078D7;">
+          <a href="drivetrain.html" style="text-decoration:none;color:inherit;">Gear Ratio Calculator</a>
+        </h3>
+        <p style="margin:0;font-size:0.95em;line-height:1.5;">Calculate engine RPM at any speed based on gear ratio, final drive, and tire diameter.</p>
+      </div>
+      <div style="padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;">
+        <h3 style="margin:0 0 8px 0;font-size:1.1em;color:#0078D7;">
+          <a href="mpg.html" style="text-decoration:none;color:inherit;">MPG Calculator</a>
+        </h3>
+        <p style="margin:0;font-size:0.95em;line-height:1.5;">Calculate true fuel economy with corrections for gear ratio and tire size changes.</p>
+      </div>
+      <div style="padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;">
+        <h3 style="margin:0 0 8px 0;font-size:1.1em;color:#0078D7;">
+          <a href="engine-calculators.html" style="text-decoration:none;color:inherit;">Engine Displacement</a>
+        </h3>
+        <p style="margin:0;font-size:0.95em;line-height:1.5;">Calculate engine displacement from bore, stroke, and cylinder count.</p>
+      </div>
+      <div style="padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;">
+        <h3 style="margin:0 0 8px 0;font-size:1.1em;color:#0078D7;">
+          <a href="tire-wheel.html" style="text-decoration:none;color:inherit;">Tire Size Converter</a>
+        </h3>
+        <p style="margin:0;font-size:0.95em;line-height:1.5;">Convert metric tire sizes to inches and calculate speedometer corrections.</p>
+      </div>
+      <div style="padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;">
+        <h3 style="margin:0 0 8px 0;font-size:1.1em;color:#0078D7;">
+          <a href="performance.html">Quarter-Mile Calculator</a>
+        </h3>
+        <p style="margin:0;font-size:0.95em;line-height:1.5;">Estimate quarter-mile elapsed time based on vehicle weight and horsepower.</p>
+      </div>
+      <div style="padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;">
+        <h3 style="margin:0 0 8px 0;font-size:1.1em;color:#0078D7;">
+          <a href="fuel.html" style="text-decoration:none;color:inherit;">Injector Size Calculator</a>
+        </h3>
+        <p style="margin:0;font-size:0.95em;line-height:1.5;">Calculate required fuel injector size for your horsepower goal.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Content -->
+  <div class="card">
+    <h2>Why Use Gear Head Proving Grounds Calculators?</h2>
+    <p>Whether you're building a race car, restoring a classic, or modifying your daily driver, accurate calculations are essential for success. Our calculators help you make informed decisions about parts selection, predict performance outcomes, and avoid costly mistakes.</p>
+    
+    <h3>Completely Free to Use</h3>
+    <p>All calculators on Gear Head Proving Grounds are 100% free with no registration required. No premium features locked behind paywalls—just straightforward tools that work.</p>
+
+    <h3>What You Can Calculate</h3>
+    <ul style="line-height:1.8;column-count:2;column-gap:30px;">
+      <li>Gear ratios and RPM calculations</li>
+      <li>True MPG with gear/tire corrections</li>
+      <li>Engine displacement (CI and liters)</li>
+      <li>Compression ratio</li>
+      <li>Piston speed and stress</li>
+      <li>Horsepower and torque conversions</li>
+      <li>Quarter-mile ET estimates</li>
+      <li>Tire size conversions</li>
+      <li>Speedometer corrections</li>
+      <li>Fuel injector sizing</li>
+      <li>Airflow requirements (CFM)</li>
+      <li>And much more!</li>
+    </ul>
   </div>
 </div>
-</div>
 
-<footer class="footer">© 2025 Gear Head Proving Grounds – All Rights Reserved</footer>
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
 <script src="script.js"></script>
 </body>
 </html>
