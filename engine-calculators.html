@@ -3,17 +3,26 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Engine Building Calculators | Gear Head Proving Grounds</title>
-<meta name="description" content="Displacement, compression, piston speed calculators"/>
+<title>Engine Displacement & Compression Ratio Calculator | Gear Head Proving Grounds</title>
+<meta name="description" content="Calculate engine displacement in cubic inches and liters, compression ratio, and piston speed. Free engine building calculators for performance enthusiasts and builders."/>
+<meta name="keywords" content="engine displacement calculator, compression ratio calculator, piston speed calculator, cubic inch calculator, bore and stroke calculator"/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://example.com/engine-calculators.html"/>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Gear Head Proving Grounds",
-  "url": "https://example.com",
-  "description": "Automotive performance, engine, and fuel economy calculators for car enthusiasts and builders.",
-  "publisher": {"@type":"Organization","name":"Gear Head Proving Grounds"}
+  "@type": "WebApplication",
+  "name": "Engine Building Calculator Suite",
+  "description": "Calculate engine displacement, compression ratio, and piston speed for engine builds",
+  "url": "https://example.com/engine-calculators.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 
@@ -22,75 +31,207 @@
 <body>
 
 <div class="header">
-  <img src="logo.png" alt="Gear Head Proving Grounds logo"/>
-  <div>
-    <div class="site-title">Gear Head Proving Grounds</div>
-    <div style="font-size:12px;color:#666">Tools & calculators for builders, tuners & enthusiasts</div>
-  </div>
+  <a href="index.html">
+    <img src="logo.png" alt="Gear Head Proving Grounds"/>
+  </a>
+  
+  <!-- Hamburger Menu Button (mobile only) -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
   <nav class="nav">
     <div class="dropdown"><a href="index.html">Home</a></div>
-    <div class="dropdown"><a href="#">Calculators ▾</a>
+    <div class="dropdown">
+      <a href="#">Calculators ▾</a>
       <div class="dropdown-content">
-        <div><a href="fuel-performance.html">Fuel & Performance</a></div>
-        <div><a href="engine-calculators.html">Engine Calculators</a></div>
+        <div><a href="performance.html">Performance</a></div>
+        <div><a href="engine-calculators.html">Engine Building</a></div>
+        <div><a href="fuel.html">Fuel & Airflow</a></div>
         <div><a href="tire-wheel.html">Tire & Wheel</a></div>
         <div><a href="drivetrain.html">Drivetrain</a></div>
+        <div><a href="mpg.html">MPG</a></div>
         <div><a href="fabrication.html">Fabrication & Misc</a></div>
       </div>
     </div>
-    <div class="dropdown"><a href="#top">Top</a></div>
   </nav>
 </div>
 
 <div class="container">
-  <div class="card"><h1>Engine Building Calculators</h1><p class="small-muted">Displacement, compression ratio, piston speed, and more.</p></div>
+  <div class="card">
+    <h1>Engine Building Calculators</h1>
+    <p class="small-muted">Calculate engine displacement, compression ratio, and piston speed for performance builds, restorations, and racing applications. Essential tools for engine builders and enthusiasts.</p>
+  </div>
+</div>
 
-  <div class="affiliate-ad container">
+<div class="affiliate-ad container">
   <a rel="sponsored"
    href="https://jegs.ork2.net/c/4100934/493925/8482" target="_top" id="493925">
-<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
+<img src="//a.impactradius-go.com/display-ad/8482-493925" border="0" alt="JEGS Performance Parts" width="300" height="250"/></a><img height="0" width="0" src="https://jegs.ork2.net/i/4100934/493925/8482" style="position:absolute;visibility:hidden;" border="0" />
 </div>
 
+<div class="container">
   <div class="card calc-card">
     <div class="calc-plain">
-      <h2>Engine Displacement</h2>
+      <h2>Engine Displacement Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Calculate total engine displacement from bore, stroke, and cylinder count. Results shown in both cubic inches (CI) and liters.</p>
       <form class="calc" data-id="displacement" onsubmit="return false;">
-        <label>Bore (inches)</label><input name="bore" placeholder="e.g. 4.00">
-        <label>Stroke (inches)</label><input name="stroke" placeholder="e.g. 3.50">
-        <label>Cylinders</label><input name="cyl" placeholder="e.g. 8">
-        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <label>Bore (inches)</label><input name="bore" placeholder="e.g. 4.00" aria-label="Cylinder bore diameter in inches">
+        <label>Stroke (inches)</label><input name="stroke" placeholder="e.g. 3.50" aria-label="Crankshaft stroke in inches">
+        <label>Number of cylinders</label><input name="cyl" placeholder="e.g. 8" aria-label="Total number of cylinders">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute Displacement</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
         <div data-result class="result-box">—</div>
       </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;">Formula: Displacement = (π/4) × Bore² × Stroke × Cylinders</p>
     </div>
   </div>
 
   <div class="card calc-card">
     <div class="calc-plain">
-      <h2>Compression Ratio (static)</h2>
+      <h2>Static Compression Ratio Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Calculate compression ratio from swept volume and clearance volume. Critical for selecting camshafts, fuel octane requirements, and preventing detonation.</p>
       <form class="calc" data-id="compression_ratio" onsubmit="return false;">
-        <label>Swept volume per cylinder (cc)</label><input name="swept" placeholder="e.g. 600">
-        <label>Clearance volume (cc)</label><input name="clearance" placeholder="e.g. 70">
-        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <label>Swept volume per cylinder (cc)</label><input name="swept" placeholder="e.g. 600" aria-label="Cylinder swept volume in cubic centimeters">
+        <label>Clearance volume (cc)</label><input name="clearance" placeholder="e.g. 70" aria-label="Combustion chamber clearance volume in cc">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute Ratio</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
         <div data-result class="result-box">—</div>
       </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;">Formula: CR = (Swept Volume + Clearance Volume) / Clearance Volume</p>
     </div>
   </div>
 
   <div class="card calc-card">
     <div class="calc-plain">
-      <h2>Piston Speed</h2>
+      <h2>Mean Piston Speed Calculator</h2>
+      <p style="margin-bottom:16px;color:#555;">Calculate average piston speed to evaluate engine stress and longevity. High piston speeds increase wear and require stronger components.</p>
       <form class="calc" data-id="piston_speed" onsubmit="return false;">
-        <label>Stroke (inches)</label><input name="stroke" placeholder="e.g. 3.50">
-        <label>RPM</label><input name="rpm" placeholder="e.g. 6000">
-        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
+        <label>Stroke (inches)</label><input name="stroke" placeholder="e.g. 3.50" aria-label="Crankshaft stroke in inches">
+        <label>Engine RPM</label><input name="rpm" placeholder="e.g. 6000" aria-label="Engine speed in revolutions per minute">
+        <div style="margin-top:12px"><button class="btn" data-action="compute">Compute Speed</button> <button class="btn" type="button" data-action="clear">Clear</button></div>
         <div data-result class="result-box">—</div>
       </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#666;">Formula: Piston Speed (ft/min) = (Stroke × RPM × 2) / 12</p>
+      <p style="margin-top:6px;font-size:0.9em;color:#666;"><strong>Piston Speed Guidelines:</strong> Under 4,000 ft/min = Street engine | 4,000-4,500 ft/min = Performance street | Over 4,500 ft/min = Racing engine</p>
     </div>
   </div>
 
+  <!-- SEO Content -->
+  <div class="card">
+    <h2>Engine Building Fundamentals</h2>
+    <p>These calculators are essential tools for anyone planning an engine build, rebuild, or modification. Understanding displacement, compression ratio, and piston speed helps you select compatible components and predict engine behavior.</p>
+    
+    <h3>Engine Displacement Explained</h3>
+    <p>Engine displacement represents the total volume swept by all pistons during one complete rotation of the crankshaft. Larger displacement generally means more power potential, but also affects vehicle classification, insurance rates, and racing class eligibility. Common modifications to increase displacement include boring cylinders to a larger diameter (overbore) or installing a crankshaft with longer stroke (stroker kit).</p>
+    
+    <h3>Compression Ratio Guide</h3>
+    <p><strong>Low Compression (8.0:1 - 9.5:1):</strong> Compatible with boost (turbo/supercharger), runs on regular fuel, good for street reliability.</p>
+    <p><strong>Medium Compression (9.5:1 - 11.0:1):</strong> Best for naturally aspirated street performance, requires premium fuel, excellent balance of power and drivability.</p>
+    <p><strong>High Compression (11.0:1 - 13.0:1):</strong> Maximum naturally aspirated power, requires race fuel or E85, careful tuning essential to prevent detonation.</p>
+    <p><strong>Race Compression (13.0:1+):</strong> Purpose-built racing engines, requires race fuel, aggressive camshaft profiles, not suitable for street use.</p>
+
+    <h3>Why Piston Speed Matters</h3>
+    <p>Piston speed directly affects engine durability and component stress. The piston must accelerate, stop, and reverse direction twice per revolution. Higher piston speeds increase loads on connecting rods, bearings, rings, and cylinder walls. Long-stroke engines reach high piston speeds at lower RPM than short-stroke engines, which is why high-revving engines typically have oversquare (bore > stroke) designs.</p>
+
+    <h3>Popular Engine Combinations</h3>
+    <p><strong>Small Block Chevy 350:</strong> 4.00" bore × 3.48" stroke = 349 CI (5.7L)</p>
+    <p><strong>Small Block Chevy 383 Stroker:</strong> 4.03" bore × 3.75" stroke = 383 CI (6.3L)</p>
+    <p><strong>Big Block Chevy 454:</strong> 4.25" bore × 4.00" stroke = 454 CI (7.4L)</p>
+    <p><strong>LS3 Corvette:</strong> 4.06" bore × 3.62" stroke = 376 CI (6.2L)</p>
+    <p><strong>Ford Windsor 302:</strong> 4.00" bore × 3.00" stroke = 302 CI (5.0L)</p>
+    <p><strong>Ford Windsor 347 Stroker:</strong> 4.00" bore × 3.40" stroke = 347 CI (5.7L)</p>
+
+    <h3>Related Calculators</h3>
+    <ul style="line-height:1.8;">
+      <li><a href="fuel-performance.html">Horsepower Calculator</a> - Convert between horsepower and torque</li>
+      <li><a href="fabrication.html">Airflow Calculator</a> - Estimate CFM requirements for your build</li>
+      <li><a href="fabrication.html">Injector Size Calculator</a> - Size fuel injectors for your horsepower goal</li>
+      <li><a href="drivetrain.html">Gear Ratio Calculator</a> - Match gearing to your engine's power band</li>
+    </ul>
+  </div>
+
+  <!-- Common Bore & Stroke Chart -->
+  <div class="card">
+    <h3>Popular V8 Engine Specifications</h3>
+    <div style="overflow-x:auto;margin-top:12px;">
+      <table style="width:100%;border-collapse:collapse;text-align:left;">
+        <thead>
+          <tr style="background:#f0f4f8;border-bottom:2px solid #0078D7;">
+            <th style="padding:10px;font-weight:700;">Engine</th>
+            <th style="padding:10px;font-weight:700;">Bore</th>
+            <th style="padding:10px;font-weight:700;">Stroke</th>
+            <th style="padding:10px;font-weight:700;">Displacement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Chevy 305</td>
+            <td style="padding:10px;">3.736"</td>
+            <td style="padding:10px;">3.48"</td>
+            <td style="padding:10px;">305 CI (5.0L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Chevy 350</td>
+            <td style="padding:10px;">4.00"</td>
+            <td style="padding:10px;">3.48"</td>
+            <td style="padding:10px;">350 CI (5.7L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Chevy 383</td>
+            <td style="padding:10px;">4.03"</td>
+            <td style="padding:10px;">3.75"</td>
+            <td style="padding:10px;">383 CI (6.3L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Chevy 454</td>
+            <td style="padding:10px;">4.25"</td>
+            <td style="padding:10px;">4.00"</td>
+            <td style="padding:10px;">454 CI (7.4L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">LS1/LS6</td>
+            <td style="padding:10px;">3.898"</td>
+            <td style="padding:10px;">3.622"</td>
+            <td style="padding:10px;">346 CI (5.7L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">LS3</td>
+            <td style="padding:10px;">4.065"</td>
+            <td style="padding:10px;">3.622"</td>
+            <td style="padding:10px;">376 CI (6.2L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Ford 302</td>
+            <td style="padding:10px;">4.00"</td>
+            <td style="padding:10px;">3.00"</td>
+            <td style="padding:10px;">302 CI (5.0L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Ford 351W</td>
+            <td style="padding:10px;">4.00"</td>
+            <td style="padding:10px;">3.50"</td>
+            <td style="padding:10px;">351 CI (5.8L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Mopar 340</td>
+            <td style="padding:10px;">4.04"</td>
+            <td style="padding:10px;">3.31"</td>
+            <td style="padding:10px;">340 CI (5.6L)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px;">Mopar 360</td>
+            <td style="padding:10px;">4.00"</td>
+            <td style="padding:10px;">3.58"</td>
+            <td style="padding:10px;">360 CI (5.9L)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved</footer>
+<footer class="footer">© 2025 Gear Head Proving Grounds — All Rights Reserved | <a href="index.html" style="color:inherit;">Home</a> | <a href="fuel-performance.html" style="color:inherit;">Performance Tools</a></footer>
 <script src="script.js"></script>
 </body>
 </html>
