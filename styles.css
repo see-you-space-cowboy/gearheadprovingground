@@ -117,13 +117,43 @@ body {
 }
 
 .hero {
-  padding: 36px 16px;
-  background: linear-gradient(180deg, #fff, #fbfdff);
+  padding: 80px 16px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-bottom: 1px solid #f0f4f8;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  max-width: none;
+}
+
+.hero .card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero .small-muted {
+  color: #f0f0f0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .card {
-  background: #fff;
+  background: #f9f9f9;
   border: 1px solid #eee;
   padding: 16px;
   border-radius: 8px;
