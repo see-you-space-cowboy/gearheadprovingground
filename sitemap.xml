@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.com/index.html</loc></url>
-  <url><loc>https://example.com/fuel-performance.html</loc></url>
-  <url><loc>https://example.com/engine-calculators.html</loc></url>
-  <url><loc>https://example.com/tire-wheel.html</loc></url>
-  <url><loc>https://example.com/drivetrain.html</loc></url>
-  <url><loc>https://example.com/fabrication.html</loc></url>
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.gearheadprovingground.com/</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+    <loc>https://www.gearheadprovingground.com/performance.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+      <loc>https://www.gearheadprovingground.com/engine-calculators.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+     <loc>https://www.gearheadprovingground.com/fuel.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+     <loc>https://www.gearheadprovingground.com/tire-wheel.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+     <loc>https://www.gearheadprovingground.com/drivetrain.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+      <loc>https://www.gearheadprovingground.com/mpg.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+       <loc>https://www.gearheadprovingground.com/fabrication.html</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
